@@ -1,0 +1,33 @@
+name: Trouble_in_Terrorist_Town_Totem
+author: TooMuchSun
+version: 1.0
+description: TTT Totems (idea and implementation by Dhalucard https://www.youtube.com/channel/UCZTqRQYguJre4_fwluoJhUA & Gamefreak | Hagen https://steamcommunity.com/id/realgamefreak)
+main: de.toomuchsun.ttt_totems.main.Main
+
+commands:
+     ttt:
+          description: open the cp for admins
+     traitor:
+          description: a ticket for the traitor role
+     detective:
+          description: a ticket for the detective role
+     jackal:
+          description: a ticket for the jackal role
+     stats:
+          description: show the stats of a player
+     s:
+          description: open the shop menu
+     shop:
+          description: open the shop menu
+     b:
+          description: quick buy of a shop item
+     buy:
+          description: quick buy of a shop item
+     damagelog:
+          description: who distributes damage to whom
+     as:
+          description: distributes an auto slay for wrongdoing
+     start:
+          description: start an round (eventually not nessesary)
+     settings:
+          description: set your own settings
