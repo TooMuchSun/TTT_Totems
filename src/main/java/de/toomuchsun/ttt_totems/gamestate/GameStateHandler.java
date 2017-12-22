@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class GameStateHandler {
     public static int current;
-    public static ArrayList<GameState> states = new ArrayList<>();
+    public static ArrayList<GameState> states = new ArrayList<GameState>();
 
     public GameStateHandler(){
 

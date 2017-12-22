@@ -14,13 +14,17 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin{
     @Override
     public void onEnable() {
-        onStart(); //Registrierung aller Commands und Listener
-        GameStateHandler.initGameState(); //Initialisierung des GameStates
+        //Registrierung aller Commands und Listener
+        onStart();
+        //Initialisierung des GameStates
+        GameStateHandler.initGameState();
 
 
     }
 
     private void onStart(){
+        // registration of all commands
+        // for explanation see the plugin.yml and read the descriptions
         this.getCommand("as").setExecutor(new CMDas());
         this.getCommand("b").setExecutor(new CMDb());
         this.getCommand("buy").setExecutor(new CMDbuy());
@@ -34,13 +38,16 @@ public class Main extends JavaPlugin{
         this.getCommand("ttt").setExecutor(new CMDttt());
 
 
-
+        //registration of the listeners
         PluginManager pm = Bukkit.getPluginManager();
-        pm.registerEvents(new vorruebergehendunbenutzt(), this);
+
+        pm.registerEvents(new vorruebergehendunbenutzt(), this); //TODO if the plugin is ready to handle the main game i can remove this listener
+
         pm.registerEvents(new LSTjoincheck(), this);
         pm.registerEvents(new LSTleavecheck(), this);
         pm.registerEvents(new LSTlogincheck(), this);
 
+        //TODO when /ttt is complete i can remove this declarations
         Var.setPrefix("");
         Var.setRounds(7);
         Var.setMaxPlayer(1);
