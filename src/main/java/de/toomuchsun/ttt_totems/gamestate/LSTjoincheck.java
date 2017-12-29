@@ -1,5 +1,6 @@
 package de.toomuchsun.ttt_totems.gamestate;
 
+import de.toomuchsun.ttt_totems.gamestate.waiting.Waiting;
 import de.toomuchsun.ttt_totems.main.var.Var;
 import de.toomuchsun.ttt_totems.roles.RoleHandler;
 import de.toomuchsun.ttt_totems.roles.Role;
@@ -25,7 +26,7 @@ public class LSTjoincheck implements Listener{
 
         if (Bukkit.getOnlinePlayers().size() >= Var.getMinPlayer()){
             if (GameStateHandler.getGamestate() == GameState.WAITING){
-                GameStateHandler.nextState();
+                Waiting.toPreparing();
             }
         }
     }

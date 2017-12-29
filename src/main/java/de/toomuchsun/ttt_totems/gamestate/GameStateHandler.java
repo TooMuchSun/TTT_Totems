@@ -1,21 +1,26 @@
 package de.toomuchsun.ttt_totems.gamestate;
 
+import de.toomuchsun.ttt_totems.gamestate.inprogress.Inprogress;
+import de.toomuchsun.ttt_totems.gamestate.preparing.Preparing;
+import de.toomuchsun.ttt_totems.gamestate.roundover.Roundover;
+import de.toomuchsun.ttt_totems.gamestate.waiting.Waiting;
 import de.toomuchsun.ttt_totems.main.var.Var;
+import org.bukkit.Bukkit;
 
 import java.util.ArrayList;
 
 public class GameStateHandler {
-    public static int current;
-    public static ArrayList<GameState> states = new ArrayList<GameState>();
+    private static int current;
+    private static ArrayList<GameState> states = new ArrayList<GameState>();
 
     public GameStateHandler(){
 
     }
 
-    public static int getCurrent(){
+    private static int getCurrent(){
         return current;
     }
-    public static void setCurrent(int gameState){
+    private static void setCurrent(int gameState){
         current = gameState;
     }
 
@@ -41,5 +46,24 @@ public class GameStateHandler {
         }
         states.add(GameState.RESTART);
         current = 0;
+        Waiting.init();
+    }
+
+    public static void backToWaiting() {
+        GameState actually = getGamestate();
+        if (actually == GameState.WAITING || actually == GameState.RESTART){
+            System.out.println("[WARN] Why does this path occur? gs: " +getGamestate());
+        } else {
+            if (actually == GameState.PREPARING){
+                Preparing.stop();
+            } else if (actually == GameState.INPROGRESS) {
+                Inprogress.stop();
+            } else if (actually == GameState.ROUNDOVER) {
+                Roundover.stop();
+            }
+            Waiting.init();
+            current = 0;
+            Bukkit.broadcastMessage(Var.getPrefix() + "Due to too few players the game was stopped.\nReturning to Waiting");
+        }
     }
 }

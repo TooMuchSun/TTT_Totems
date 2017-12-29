@@ -1,5 +1,6 @@
 package de.toomuchsun.ttt_totems.main;
 
+
 import de.toomuchsun.ttt_totems.commands.*;
 import de.toomuchsun.ttt_totems.gamestate.GameStateHandler;
 import de.toomuchsun.ttt_totems.gamestate.LSTjoincheck;
@@ -12,15 +13,22 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin{
+    private static Main plugin;
+
     @Override
     public void onEnable() {
-        //Registrierung aller Commands und Listener
+        // needed for getPlugin
+        plugin = this;
+        // registration of Commands and Listener
         onStart();
-        //Initialisierung des GameStates
+        // initialisation of GameStates
         GameStateHandler.initGameState();
+        
 
 
     }
+
+
 
     private void onStart(){
         // registration of all commands
@@ -52,5 +60,9 @@ public class Main extends JavaPlugin{
         Var.setRounds(7);
         Var.setMaxPlayer(1);
         Var.setMinPlayer(9);
+    }
+
+    public static Main getPlugin(){
+        return plugin;
     }
 }
