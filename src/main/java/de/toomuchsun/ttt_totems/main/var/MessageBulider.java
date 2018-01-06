@@ -40,13 +40,12 @@ public class MessageBulider {
     }
 
     // %USER% %ROLE
-    public static String getTicketForced() {
+    public static String getTicketForced(boolean self) {
+        if (self){
+            return cfg.getString(path + "TicketForcedSelf." + Var.getLanguage());
+        }
         return cfg.getString(path + "TicketForced." + Var.getLanguage());
     }
-
-    public static String getTicketForcedSelf() {
-        return cfg.getString(path + "TicketForcedSelf." + Var.getLanguage());
-    }
-
+    
 
 }

@@ -44,18 +44,21 @@ public class TicketHandler {
                     // if admin use forcerole only the admin gets an answer
                     // the user does not know that its role was set
                     } else {
-                        a.sendMessage(MessageBulider.getTicketForced()
+                        a.sendMessage(MessageBulider.getTicketForced(p==a)
                                 .replace("%USER%", p.getName())
                                 .replace("%ROLE%", r.getColor() + r.getName()));
                     }
                 // if own ticket was used, p will shown the text as if it used normal a ticket
                 } else {
-                    p.sendMessage(MessageBulider.getTicketUsed().replace("%ROLE%", r.getColor() + r.getName(), boolean (b == a)));
+                    p.sendMessage(MessageBulider.getTicketUsed().replace("%ROLE%", r.getColor() + r.getName()));
                 }
                 tickets.replace(p, new Ticket(p, r, forced));
                 return true;
             }
             tickets.put(p, new Ticket(p, r, forced));
+            if (forced){
+                p.sendMessage(MessageBulider.getTicketForced(p==a).replace("%ROLE%", r.getColor() + r.getName()));
+            }
             p.sendMessage(MessageBulider.getTicketUsed().replace("%ROLE%", r.getColor() + r.getName()));
             return true;
         } else {
