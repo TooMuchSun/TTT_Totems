@@ -1,9 +1,9 @@
 package de.toomuchsun.ttt_totems.gamestate;
 
-import de.toomuchsun.ttt_totems.gamestate.inprogress.Inprogress;
-import de.toomuchsun.ttt_totems.gamestate.preparing.Preparing;
-import de.toomuchsun.ttt_totems.gamestate.roundover.Roundover;
-import de.toomuchsun.ttt_totems.gamestate.waiting.Waiting;
+import de.toomuchsun.ttt_totems.gamestate.States.Inprogress;
+import de.toomuchsun.ttt_totems.gamestate.States.Preparing;
+import de.toomuchsun.ttt_totems.gamestate.States.Roundover;
+import de.toomuchsun.ttt_totems.gamestate.States.Waiting;
 import de.toomuchsun.ttt_totems.main.var.Var;
 import org.bukkit.Bukkit;
 

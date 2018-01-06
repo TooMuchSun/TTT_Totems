@@ -1,6 +1,8 @@
-package de.toomuchsun.ttt_totems.gamestate;
+package de.toomuchsun.ttt_totems.gamestate.Listener;
 
-import de.toomuchsun.ttt_totems.gamestate.waiting.Waiting;
+import de.toomuchsun.ttt_totems.gamestate.GameState;
+import de.toomuchsun.ttt_totems.gamestate.GameStateHandler;
+import de.toomuchsun.ttt_totems.gamestate.States.Waiting;
 import de.toomuchsun.ttt_totems.main.var.Var;
 import de.toomuchsun.ttt_totems.roles.RoleHandler;
 import de.toomuchsun.ttt_totems.roles.Role;
@@ -14,14 +16,15 @@ public class LSTjoincheck implements Listener{
     public void onJoin(PlayerJoinEvent e){
         e.setJoinMessage("");
 
+        //TODO überprüfen
         if (GameStateHandler.getGamestate() == GameState.WAITING) {
-            RoleHandler.assignRole(e.getPlayer(), Role.WAITING);
+            RoleHandler.assignRole(e.getPlayer(), Role.INNOCENT);
         } else if (GameStateHandler.getGamestate() == GameState.PREPARING){
-            RoleHandler.assignRole(e.getPlayer(), Role.PREPARING);
+            RoleHandler.assignRole(e.getPlayer(), Role.INNOCENT);
         } else if (GameStateHandler.getGamestate() == GameState.INPROGRESS){
-            RoleHandler.assignRole(e.getPlayer(), Role.INPROGRESS);
+            RoleHandler.assignRole(e.getPlayer(), Role.INNOCENT);
         } else if (GameStateHandler.getGamestate() == GameState.ROUNDOVER || GameStateHandler.getGamestate() == GameState.RESTART){
-            RoleHandler.assignRole(e.getPlayer(), Role.ROUNDOVER);
+            RoleHandler.assignRole(e.getPlayer(), Role.INNOCENT);
         }
 
         if (Bukkit.getOnlinePlayers().size() >= Var.getMinPlayer()){

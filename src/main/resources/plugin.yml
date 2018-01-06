@@ -31,3 +31,5 @@ commands:
           description: start an round (eventually not nessesary)
      settings:
           description: set your own settings
+     forcerole:
+          description: set the role of an other player

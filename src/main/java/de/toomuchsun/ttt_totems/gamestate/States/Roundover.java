@@ -1,6 +1,6 @@
-package de.toomuchsun.ttt_totems.gamestate.preparing;
+package de.toomuchsun.ttt_totems.gamestate.States;
 
-public class Preparing {
+public class Roundover {
     public static void init(){
 
     }

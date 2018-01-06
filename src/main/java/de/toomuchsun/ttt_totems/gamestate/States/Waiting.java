@@ -1,13 +1,12 @@
-package de.toomuchsun.ttt_totems.gamestate.waiting;
+package de.toomuchsun.ttt_totems.gamestate.States;
 
-import de.toomuchsun.ttt_totems.gamestate.GameState;
 import de.toomuchsun.ttt_totems.gamestate.GameStateHandler;
 import de.toomuchsun.ttt_totems.main.Main;
 import de.toomuchsun.ttt_totems.scoreboard.Actionbar;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class Waiting {
+public class Waiting{
     private static int ID;
     private static int seconds = 0;
     public static void init(){

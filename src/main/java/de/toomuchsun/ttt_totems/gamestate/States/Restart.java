@@ -1,6 +1,6 @@
-package de.toomuchsun.ttt_totems.gamestate.roundover;
+package de.toomuchsun.ttt_totems.gamestate.States;
 
-public class Roundover {
+public class Restart {
     public static void init(){
 
     }

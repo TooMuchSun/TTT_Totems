@@ -1,4 +1,4 @@
-package de.toomuchsun.ttt_totems.gamestate;
+package de.toomuchsun.ttt_totems.gamestate.Listener;
 
 import de.toomuchsun.ttt_totems.main.var.Var;
 import org.bukkit.Bukkit;

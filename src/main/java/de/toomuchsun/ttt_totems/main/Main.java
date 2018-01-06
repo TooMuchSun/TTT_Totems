@@ -3,10 +3,11 @@ package de.toomuchsun.ttt_totems.main;
 
 import de.toomuchsun.ttt_totems.commands.*;
 import de.toomuchsun.ttt_totems.gamestate.GameStateHandler;
-import de.toomuchsun.ttt_totems.gamestate.LSTjoincheck;
-import de.toomuchsun.ttt_totems.gamestate.LSTleavecheck;
-import de.toomuchsun.ttt_totems.gamestate.LSTlogincheck;
+import de.toomuchsun.ttt_totems.gamestate.Listener.LSTjoincheck;
+import de.toomuchsun.ttt_totems.gamestate.Listener.LSTleavecheck;
+import de.toomuchsun.ttt_totems.gamestate.Listener.LSTlogincheck;
 import de.toomuchsun.ttt_totems.listener.vorruebergehendunbenutzt;
+import de.toomuchsun.ttt_totems.main.var.MessageBulider;
 import de.toomuchsun.ttt_totems.main.var.Var;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -38,6 +39,7 @@ public class Main extends JavaPlugin{
         this.getCommand("buy").setExecutor(new CMDbuy());
         this.getCommand("damagelog").setExecutor(new CMDdamagelog());
         this.getCommand("detective").setExecutor(new CMDdetective());
+        this.getCommand("forcerole").setExecutor(new CMDforcerole());
         this.getCommand("jackal").setExecutor(new CMDjackal());
         this.getCommand("s").setExecutor(new CMDs());
         this.getCommand("shop").setExecutor(new CMDshop());
@@ -60,6 +62,7 @@ public class Main extends JavaPlugin{
         Var.setRounds(7);
         Var.setMaxPlayer(1);
         Var.setMinPlayer(9);
+        Var.setLanguage("en");
     }
 
     public static Main getPlugin(){

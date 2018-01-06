@@ -1,6 +1,6 @@
-package de.toomuchsun.ttt_totems.gamestate.restart;
+package de.toomuchsun.ttt_totems.gamestate.States;
 
-public class Restart {
+public class Inprogress {
     public static void init(){
 
     }
