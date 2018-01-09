@@ -46,6 +46,6 @@ public class MessageBulider {
         }
         return cfg.getString(path + "TicketForced." + Var.getLanguage());
     }
-    
+
 
 }

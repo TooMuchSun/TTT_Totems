@@ -50,6 +50,10 @@ public class TicketHandler {
                     }
                 // if own ticket was used, p will shown the text as if it used normal a ticket
                 } else {
+                    if (forced){
+                        a.sendMessage(MessageBulider.getTicketForced(p==a).replace("%ROLE", r.getColor() + r.getName()));
+                        return true;
+                    }
                     p.sendMessage(MessageBulider.getTicketUsed().replace("%ROLE%", r.getColor() + r.getName()));
                 }
                 tickets.replace(p, new Ticket(p, r, forced));
